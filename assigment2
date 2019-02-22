@@ -1,0 +1,102 @@
+<style>
+@charset "UTF-8";
+/*
+Terms:
+Product list, item list -> div.list
+Product(s), item(s) -> div.product
+
+Q1.
+Use CSS to implement a grid layout. Make 4 products/items in each row, they should be responsive when window/container resized. Give a fixed 40px spacing between each conjunct items.
+
+Q2.
+Give each item (the grey div) one colored inner frame and one colored outter frame. The spacing between item and frames is fixed 10px
+
+
+*/
+/*Current CSS*/
+/*
+Q1.
+1) grid layout   √
+2) 4 products/items in each row  √
+3) responsive when window/container resized √
+4) fixed 40px spacing between each conjunct items.
+
+Q2.
+1) Give each item (the grey div) one colored inner frame and one colored outter frame.
+2) The spacing between item and frames is fixed 10px √
+
+*/
+img {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  outline: 1px solid green;
+  outline-offset: -13px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.list {
+  margin: 20px auto;
+  max-width: 1080px;
+  display: grid;
+  display: -ms-grid;
+  zoom: 1;
+  /* For IE 6/7 */
+  -ms-grid-columns: 1fr [4];
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 13px;
+  -ms-grid-gap: 13px;
+  resize: both;
+  overflow: auto;
+}
+
+.product {
+  text-align: center;
+}
+.product .desc {
+  margin-top: 40px;
+}
+.product .image-container {
+  background: #fff;
+  border: 1px solid red;
+  padding: 13px;
+}</style>
+<div class="list">
+  <div class="product" data-order="1">
+    <div class="image-container"><img src="http://placehold.it/150x250/ff0000"></div>
+    <div class="desc">
+      1. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum sapien at arcu placerat laoreet. Phasellus non vestibulum erat. Sed arcu est, blandit ullamcorper dolor placerat, tempus cursus nisi.Lorem ipsum dolor sit ametLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum sapien at arcu placerat laoreet. Phasellus non vestibulum erat. Sed arcu est, blandit ullamcorper dolor placerat, tempus cursus nisi.
+      </div>
+  </div>
+  <div class="product" data-order="7">
+    <div class="image-container"><img src="http://placehold.it/150x250"></div>
+    <div class="desc"> 7. vestibulum erat. Sed arcu est, blandit ullamcorper dolor placerat, tempus cursus nisi.</div>
+  </div>
+  <div class="product" data-order="5">
+    <div class="image-container"><img src="http://placehold.it/150x250"></div>
+    <div class="desc"> 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum sapien at arcu placerat  blandit ullamcorper dolor placerat, tempus cursus nisi.</div>
+  </div>
+  <div class="product" data-order="3">
+    <div class="image-container"><img src="http://placehold.it/150x250"></div>
+    <div class="desc"> 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum sapien at arcu placerat laoreet. Phasellus non vestibulum erat. Sed arcu est, blandit ullamcorper dolor placerat, tempus cursus nisi.</div>
+  </div>
+  <div class="product" data-order="6">
+    <div class="image-container"><img src="http://placehold.it/150x250"></div>
+    <div class="desc"> 6. Phasellus non vestibulum erat. Sed arcu est, blandit ullamcorper dolor placerat, tempus cursus nisi.</div>
+  </div>
+  <div class="product" data-order="2">
+    <div class="image-container"><img src="http://placehold.it/150x250"></div>
+    <div class="desc"> 2. Phasellus non vestibulum erat. Sed arcu est, blandit ullamcorper dolor placerat, tempus cursus nisi.</div>
+  </div>
+  <div class="product" data-order="4">
+    <div class="image-container"><img src="http://placehold.it/150x250"></div>
+    <div class="desc"> 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum sapien at arcu placerat laoreet. </div>
+  </div>
+</div>
